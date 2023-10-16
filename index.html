@@ -26,8 +26,8 @@
         <h1 style="text-align: center;text-decoration: wavy;color: greenyellow;" class="text-decoration-underline">5.0 system GPA calculator</h1>
     </div>
 <div style="display: grid;grid-template-columns:35% 65%">
-    <div style="width: 100%;border: 3px solid white;height: 500px;display: flex;flex-direction: column;gap: 15px;padding: 10px 7px 10px 7px;border-radius: 5px;">
-        <input type="text" id="code" placeholder="course code" style="width:92% ;height: 40px;border-radius: 10px;border: 1px solid white;background-color: transparent;border: 1px solid blue;">
+    <div style="width: 100%;border: 3px solid white;height: 500px;display: flex;flex-direction: column;gap: 15px;padding: 10px 3px 10px 3px;border-radius: 5px;">
+        <input type="text" id="code" placeholder="course code" style="width:100% ;height: 32px;border-radius: 10px;border: 1px solid white;background-color: transparent;border: 1px solid blue;padding: 3px 3px 3px 10px;">
         <select name="unit" id="unit" style="width:100% ;height: 40px;border-radius: 10px;background-color: transparent;border: 1px solid blue;" class="form-control">
             <option value="" selected disabled>No of units</option>
             <option value="5">5</option>
@@ -49,7 +49,7 @@
     </div>
         
         <div style="margin-left: 20px;">
-            <div id="codedisplay" style="font-size: 12px;color: white;">
+            <div id="codedisplay" style="font-size: 12px;color: white;height: 400px;overflow-y: auto;">
     
             </div>
             <div id="answer" style="color: white;">
@@ -68,6 +68,7 @@
             }
             else{
                 document.getElementById("answer").innerHTML = ""
+               
             let database = {
                 courseCode : document.getElementById("code").value,
                 courseUnit : document.getElementById("unit").value,
@@ -117,6 +118,9 @@
                 // }  
             }
             }
+            document.getElementById("code").value = ""
+                document.getElementById("unit").value= ""
+                document.getElementById("grade").value = ""
         }
         function check() {
             if (this.answer >= 4.5 && this.answer<=5) {
